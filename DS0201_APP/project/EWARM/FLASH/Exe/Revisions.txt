@@ -1,0 +1,19 @@
+BenF APP V3.13 - 2011.02.22
+* Port to IAR 6.1
+
+BenF LIB V3.13 - 2011.02.22
+* Port to IAR 6.1
+
+BenF APP V3.12 - 2010.11.15
+* Fix issue with incorrect range calibration
+
+BenF APP V3.11 - 2010.11.08
+* Fix issue with calibrate range displaying 0.x% for 10.x%
+
+BenF APP V3.10 - 2010.11.08
+
+* Improved SD card compatibility
+* Support two point basic unit calibration
+* FI menu group will now default to Save Img
+* Readme and revision file added to distribution
+* Added template files to distribution

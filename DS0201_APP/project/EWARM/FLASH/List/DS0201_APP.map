@@ -1,0 +1,554 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V6.10.2.52244/W32 for ARM              22/Feb/2011  19:04:23 #
+# Copyright 2007-2010 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLASH\Exe\DS #
+#                    0201_APP.out                                             #
+#    Map file     =  C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLASH\List\D #
+#                    S0201_APP.map                                            #
+#    Command line =  "C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLASH\Obj\A #
+#                    SM_Function.o" "C:\DSO\DSO BenF                          #
+#                    v3\DS0201_APP\project\EWARM\FLASH\Obj\Calculate.o"       #
+#                    "C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLASH\Obj\F #
+#                    iles.o" "C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLA #
+#                    SH\Obj\Function.o" "C:\DSO\DSO BenF                      #
+#                    v3\DS0201_APP\project\EWARM\FLASH\Obj\HW_V1_Config.o"    #
+#                    "C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLASH\Obj\L #
+#                    cd.o" "C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLASH #
+#                    \Obj\Menu.o" "C:\DSO\DSO BenF                            #
+#                    v3\DS0201_APP\project\EWARM\FLASH\Obj\cortexm3_macro.o"  #
+#                    "C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLASH\Obj\m #
+#                    ain.o" "C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLAS #
+#                    H\Obj\stm32f10x_flash.o" "C:\DSO\DSO BenF                #
+#                    v3\DS0201_APP\project\EWARM\FLASH\Obj\stm32f10x_gpio.o"  #
+#                    "C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLASH\Obj\s #
+#                    tm32f10x_it.o" "C:\DSO\DSO BenF                          #
+#                    v3\DS0201_APP\project\EWARM\FLASH\Obj\stm32f10x_lib.o"   #
+#                    "C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLASH\Obj\s #
+#                    tm32f10x_nvic.o" "C:\DSO\DSO BenF                        #
+#                    v3\DS0201_APP\project\EWARM\FLASH\Obj\stm32f10x_rcc.o"   #
+#                    "C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLASH\Obj\s #
+#                    tm32f10x_spi.o" "C:\DSO\DSO BenF                         #
+#                    v3\DS0201_APP\project\EWARM\FLASH\Obj\stm32f10x_systick. #
+#                    o" "C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLASH\Ob #
+#                    j\stm32f10x_vector.o" -o "C:\DSO\DSO BenF                #
+#                    v3\DS0201_APP\project\EWARM\FLASH\Exe\DS0201_APP.out"    #
+#                    --map "C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLASH #
+#                    \List\DS0201_APP.map" --config "C:\DSO\DSO BenF          #
+#                    v3\DS0201_APP\project\EWARM\APP_cortex.icf"              #
+#                    --semihosting --entry __iar_program_start                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x0800c000 { ro section .intvec };
+"P1":  place in [from 0x0800c000 to 0x0801ffff] { ro };
+"P2":  place in [from 0x20001800 to 0x20004fff] { rw, block CSTACK, block HEAP };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                       0xec
+  .intvec            const    0x0800c000    0xec  stm32f10x_vector.o [1]
+                            - 0x0800c0ec    0xec
+
+"P1":                                     0x4fd0
+  .text              ro code  0x0800c0ec  0x1604  Menu.o [1]
+  .text              ro code  0x0800d6f0   0x180  HW_V1_Config.o [1]
+  .text              ro code  0x0800d870   0x454  Calculate.o [1]
+  .text              ro code  0x0800dcc4   0xb90  Lcd.o [1]
+  .text              ro code  0x0800e854   0x8b4  Function.o [1]
+  .text              ro code  0x0800f108    0x36  strlen.o [4]
+  .text              ro code  0x0800f13e    0x2e  copy_init3.o [4]
+  .text              ro code  0x0800f16c   0x41c  Files.o [1]
+  .text              ro code  0x0800f588    0x70  ABImemcpy.o [4]
+  .text              ro code  0x0800f5f8    0x66  ABImemset.o [4]
+  .text              ro code  0x0800f65e    0x22  zero_init3.o [4]
+  .text              ro code  0x0800f680    0x38  ABImemset48.o [4]
+  .text              ro code  0x0800f6b8    0xa4  stm32f10x_nvic.o [1]
+  CODE               ro code  0x0800f75c   0x402  ASM_Function.o [1]
+  .text              ro code  0x0800fb60    0xfa  stm32f10x_flash.o [1]
+  .text              ro code  0x0800fc5c   0x7ec  main.o [1]
+  .rodata            const    0x08010448   0x3d0  Menu.o [1]
+  .text              ro code  0x08010818   0x226  stm32f10x_it.o [1]
+  .rodata            const    0x08010a40   0x10c  Menu.o [1]
+  CODE               ro code  0x08010b4c    0x6e  cortexm3_macro.o [1]
+  .rodata            const    0x08010bbc    0x3c  Menu.o [1]
+  .rodata            const    0x08010bf8    0x38  Files.o [1]
+  .rodata            const    0x08010c30    0x2c  Function.o [1]
+  .rodata            const    0x08010c5c    0x2c  Menu.o [1]
+  .rodata            const    0x08010c88    0x2c  Menu.o [1]
+  .text              ro code  0x08010cb4    0x2c  data_init3.o [4]
+  .iar.init_table    const    0x08010ce0    0x24  - Linker created -
+  .text              ro code  0x08010d04    0x16  cmain.o [4]
+  .text              ro code  0x08010d1a     0x4  low_level_init.o [3]
+  .text              ro code  0x08010d1e     0x8  exit.o [3]
+  .text              ro code  0x08010d28     0xa  cexit.o [4]
+  .text              ro code  0x08010d34    0x14  exit.o [5]
+  .rodata            const    0x08010d48    0x10  main.o [1]
+  .rodata            const    0x08010d58     0xc  Menu.o [1]
+  .rodata            const    0x08010d64     0xc  Menu.o [1]
+  .rodata            const    0x08010d70     0xc  Menu.o [1]
+  .rodata            const    0x08010d7c     0xc  Menu.o [1]
+  .rodata            const    0x08010d88     0xc  Menu.o [1]
+  .rodata            const    0x08010d94     0xc  Menu.o [1]
+  .rodata            const    0x08010da0     0xc  Menu.o [1]
+  .rodata            const    0x08010dac     0xc  Menu.o [1]
+  .rodata            const    0x08010db8     0xc  Menu.o [1]
+  .rodata            const    0x08010dc4     0xc  Menu.o [1]
+  .rodata            const    0x08010dd0     0xc  Menu.o [1]
+  .rodata            const    0x08010ddc     0xc  Menu.o [1]
+  .rodata            const    0x08010de8     0xc  Menu.o [1]
+  .rodata            const    0x08010df4     0xc  Menu.o [1]
+  .rodata            const    0x08010e00     0xc  Menu.o [1]
+  .rodata            const    0x08010e0c     0xc  Menu.o [1]
+  .rodata            const    0x08010e18     0xc  Menu.o [1]
+  .rodata            const    0x08010e24     0xc  Menu.o [1]
+  .rodata            const    0x08010e30     0xc  Menu.o [1]
+  .rodata            const    0x08010e3c     0xc  Menu.o [1]
+  .text              ro code  0x08010e48     0xc  cstartup_M.o [4]
+  .rodata            const    0x08010e54     0x8  HW_V1_Config.o [1]
+  .rodata            const    0x08010e5c     0x8  Menu.o [1]
+  .rodata            const    0x08010e64     0x8  Menu.o [1]
+  .rodata            const    0x08010e6c     0x8  Menu.o [1]
+  .rodata            const    0x08010e74     0x8  Menu.o [1]
+  .rodata            const    0x08010e7c     0x8  Menu.o [1]
+  .rodata            const    0x08010e84     0x8  Menu.o [1]
+  .rodata            const    0x08010e8c     0x8  Menu.o [1]
+  .rodata            const    0x08010e94     0x8  Menu.o [1]
+  .rodata            const    0x08010e9c     0x8  Menu.o [1]
+  .rodata            const    0x08010ea4     0x8  Menu.o [1]
+  .rodata            const    0x08010eac     0x8  Menu.o [1]
+  .rodata            const    0x08010eb4     0x8  Menu.o [1]
+  .rodata            const    0x08010ebc     0x8  Menu.o [1]
+  .rodata            const    0x08010ec4     0x8  Menu.o [1]
+  .rodata            const    0x08010ecc     0x8  Menu.o [1]
+  .rodata            const    0x08010ed4     0x8  Menu.o [1]
+  .rodata            const    0x08010edc     0x8  Menu.o [1]
+  .rodata            const    0x08010ee4     0x8  Menu.o [1]
+  .rodata            const    0x08010eec     0x8  Menu.o [1]
+  .rodata            const    0x08010ef4     0x8  Menu.o [1]
+  .rodata            const    0x08010efc     0x8  Menu.o [1]
+  .rodata            const    0x08010f04     0x8  Menu.o [1]
+  .rodata            const    0x08010f0c     0x8  Menu.o [1]
+  .rodata            const    0x08010f14     0x4  Menu.o [1]
+  .rodata            const    0x08010f18     0x4  Menu.o [1]
+  .rodata            const    0x08010f1c     0x4  Menu.o [1]
+  .rodata            const    0x08010f20     0x4  Menu.o [1]
+  .rodata            const    0x08010f24     0x4  Menu.o [1]
+  .rodata            const    0x08010f28     0x4  Menu.o [1]
+  .rodata            const    0x08010f2c     0x4  Menu.o [1]
+  .rodata            const    0x08010f30     0x4  Menu.o [1]
+  .rodata            const    0x08010f34     0x4  Menu.o [1]
+  .rodata            const    0x08010f38     0x4  Menu.o [1]
+  Initializer bytes  ro data  0x08010f3c   0x180  <for P2 s0>
+                            - 0x080110bc  0x4fd0
+
+"P2", part 1 of 3:                         0x180
+  P2 s0                       0x20001800   0x180  <Init block>
+    .data            inited   0x20001800    0x6c  Menu.o [1]
+    .data            inited   0x2000186c    0x3c  Menu.o [1]
+    .data            inited   0x200018a8    0x38  Menu.o [1]
+    .data            inited   0x200018e0    0x28  Menu.o [1]
+    .data            inited   0x20001908    0x28  Menu.o [1]
+    .data            inited   0x20001930    0x28  Menu.o [1]
+    .data            inited   0x20001958    0x1c  Menu.o [1]
+    .data            inited   0x20001974     0xc  stm32f10x_it.o [1]
+                            - 0x20001980   0x180
+
+"P2", part 2 of 3:                        0x1f40
+  .bss               zero     0x20001980  0x1800  Function.o [1]
+  .bss               zero     0x20003180   0x200  Files.o [1]
+  .bss               zero     0x20003380   0x130  Function.o [1]
+  .bss               zero     0x200034b0   0x12c  Function.o [1]
+  .bss               zero     0x200035dc   0x12c  Function.o [1]
+  .bss               zero     0x20003708   0x12c  Function.o [1]
+  .bss               zero     0x20003834    0x34  Function.o [1]
+  .bss               zero     0x20003868    0x28  Files.o [1]
+  .bss               zero     0x20003890    0x22  Menu.o [1]
+  .bss               zero     0x200038b2     0x2  HW_V1_Config.o [1]
+  .bss               zero     0x200038b4     0x4  HW_V1_Config.o [1]
+  .bss               zero     0x200038b8     0x2  HW_V1_Config.o [1]
+  .bss               zero     0x200038ba     0x2  Lcd.o [1]
+  .bss               zero     0x200038bc     0x1  Function.o [1]
+  .bss               zero     0x200038bd     0x1  HW_V1_Config.o [1]
+                            - 0x200038be  0x1f3e
+
+"P2", part 3 of 3:                        0x1000
+  CSTACK                      0x200038c0  0x1000  <Block>
+    CSTACK           uninit   0x200038c0  0x1000  <Block tail>
+                            - 0x200048c0  0x1000
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x1f3e:
+          0x20001980  0x1f3e
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x180:
+          0x08010f3c   0x180
+    1 destination range, total size 0x180:
+          0x20001800   0x180
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data
+    ------              -------  -------  -------
+C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLASH\Obj: [1]
+    ASM_Function.o        1 026
+    Calculate.o           1 108
+    Files.o               1 052       56      552
+    Function.o            2 228       44    7 401
+    HW_V1_Config.o          384        8        9
+    Lcd.o                 2 960                 2
+    Menu.o                5 636    2 228      406
+    cortexm3_macro.o        110
+    main.o                2 028       16
+    stm32f10x_flash.o       250
+    stm32f10x_it.o          550       12       12
+    stm32f10x_nvic.o        164
+    stm32f10x_vector.o               236
+    ---------------------------------------------
+    Total:               17 496    2 600    8 382
+
+command line: [2]
+    ---------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                    8
+    low_level_init.o          4
+    ---------------------------------------------
+    Total:                   12
+
+rt7M_tl.a: [4]
+    ABImemcpy.o             112
+    ABImemset.o             102
+    ABImemset48.o            56
+    cexit.o                  10
+    cmain.o                  22
+    copy_init3.o             46
+    cstartup_M.o             12
+    data_init3.o             44
+    strlen.o                 54
+    zero_init3.o             34
+    ---------------------------------------------
+    Total:                  492
+
+shb_l.a: [5]
+    exit.o                   20
+    ---------------------------------------------
+    Total:                   20
+
+    Gaps                      8        4
+    Linker created                    36    4 096
+-------------------------------------------------
+    Grand Total:         18 028    2 640   12 478
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+?main                   0x08010d05          Code  Gb  cmain.o [4]
+ADC_IRQHandler          0x080108ab     0x2  Code  Gb  stm32f10x_it.o [1]
+ADC_Start               0x0800d7cb    0x2c  Code  Gb  HW_V1_Config.o [1]
+ADC_Stop                0x0800d7bf     0xc  Code  Gb  HW_V1_Config.o [1]
+APP_Offsets             0x08010e54     0x8  Data  Gb  HW_V1_Config.o [1]
+AdcToSig                0x0800e95d    0x36  Code  Gb  Function.o [1]
+ApplyConfig             0x0800d62b    0x78  Code  Gb  Menu.o [1]
+Battery_Color           0x08010448     0xc  Data  Gb  Menu.o [1]
+Battery_Status          0x080107e8    0x14  Data  Gb  Menu.o [1]
+BmpHead                 0x08010bf8    0x38  Data  Gb  Files.o [1]
+BusFaultException       0x0801081f     0x2  Code  Gb  stm32f10x_it.o [1]
+CAN_RX1_IRQHandler      0x080108bd     0x2  Code  Gb  stm32f10x_it.o [1]
+CAN_SCE_IRQHandler      0x080108bf     0x2  Code  Gb  stm32f10x_it.o [1]
+CSTACK$$Base            0x200038c0           --   Gb  - Linker created -
+CSTACK$$Limit           0x200048c0           --   Gb  - Linker created -
+Char_to_Str             0x0800dc71    0x30  Code  Gb  Calculate.o [1]
+CheckSub                0x0800d52d    0x48  Code  Gb  Menu.o [1]
+ClusterNum              0x20003888     0x4  Data  Gb  Files.o [1]
+CurrentMenu             0x2000389c     0x1  Data  Gb  Menu.o [1]
+DMAChannel1_IRQHandler  0x08010841    0x5e  Code  Gb  stm32f10x_it.o [1]
+DMAChannel2_IRQHandler  0x0801089f     0x2  Code  Gb  stm32f10x_it.o [1]
+DMAChannel3_IRQHandler  0x080108a1     0x2  Code  Gb  stm32f10x_it.o [1]
+DMAChannel4_IRQHandler  0x080108a3     0x2  Code  Gb  stm32f10x_it.o [1]
+DMAChannel5_IRQHandler  0x080108a5     0x2  Code  Gb  stm32f10x_it.o [1]
+DMAChannel6_IRQHandler  0x080108a7     0x2  Code  Gb  stm32f10x_it.o [1]
+DMAChannel7_IRQHandler  0x080108a9     0x2  Code  Gb  stm32f10x_it.o [1]
+DebugMonitor            0x08010823     0x2  Code  Gb  stm32f10x_it.o [1]
+Delay_Counter           0x200038b8     0x2  Data  Gb  HW_V1_Config.o [1]
+Delayms                 0x0800d829     0xc  Code  Gb  HW_V1_Config.o [1]
+DirBlkNum               0x2000386e     0x2  Data  Gb  Files.o [1]
+DirMatch                0x0800f2df    0x32  Code  Gb  Files.o [1]
+Dir_Addr                0x2000387c     0x4  Data  Gb  Files.o [1]
+Dir_Offset              0x20003870     0x2  Data  Gb  Files.o [1]
+DisplayFieldEx          0x0800d1d9    0xc2  Code  Gb  Menu.o [1]
+Display_Frame           0x0800dd75    0x3a  Code  Gb  Lcd.o [1]
+Display_Grid            0x0800ddaf   0x1d8  Code  Gb  Lcd.o [1]
+Display_Str             0x0800e799    0xa4  Code  Gb  Lcd.o [1]
+DrawMenu                0x0800cb83    0x34  Code  Gb  Menu.o [1]
+Draw_Reference          0x0800eaeb    0x2e  Code  Gb  Function.o [1]
+Draw_SEG                0x0800df87    0x84  Code  Gb  Lcd.o [1]
+Draw_Ti_Line            0x0800e147    0x56  Code  Gb  Lcd.o [1]
+Draw_Ti_Mark            0x0800e367   0x1b8  Code  Gb  Lcd.o [1]
+Draw_Trig_Pos           0x0800e573    0xb4  Code  Gb  Lcd.o [1]
+Draw_Vi_Line            0x0800e0eb    0x5c  Code  Gb  Lcd.o [1]
+Draw_Vi_Mark            0x0800e19d   0x1ca  Code  Gb  Lcd.o [1]
+Draw_Vt_Line            0x0800e08f    0x5c  Code  Gb  Lcd.o [1]
+Draw_Wave               0x0800eb93    0x74  Code  Gb  Function.o [1]
+Duty                    0x2000384c     0x4  Data  Gb  Function.o [1]
+EXTI0_IRQHandler        0x08010837     0x2  Code  Gb  stm32f10x_it.o [1]
+EXTI15_10_IRQHandler    0x08010a39     0x2  Code  Gb  stm32f10x_it.o [1]
+EXTI1_IRQHandler        0x08010839     0x2  Code  Gb  stm32f10x_it.o [1]
+EXTI2_IRQHandler        0x0801083b     0x2  Code  Gb  stm32f10x_it.o [1]
+EXTI3_IRQHandler        0x0801083d     0x2  Code  Gb  stm32f10x_it.o [1]
+EXTI4_IRQHandler        0x0801083f     0x2  Code  Gb  stm32f10x_it.o [1]
+EXTI9_5_IRQHandler      0x080108c1     0x2  Code  Gb  stm32f10x_it.o [1]
+Erase_Buffer            0x20003708   0x12c  Data  Gb  Function.o [1]
+Erase_Reference         0x0800eabd    0x2e  Code  Gb  Function.o [1]
+Erase_SEG               0x0800e00b    0x84  Code  Gb  Lcd.o [1]
+Erase_Sensitivity       0x0800cb21    0x62  Code  Gb  Menu.o [1]
+Erase_Trig_Pos          0x0800e51f    0x54  Code  Gb  Lcd.o [1]
+Erase_Wave              0x0800eb19    0x56  Code  Gb  Function.o [1]
+FAT16                   0x20003868     0x1  Data  Gb  Files.o [1]
+FAT1_Addr               0x2000388c     0x4  Data  Gb  Files.o [1]
+FAT_Info                0x0800f16d    0xe2  Code  Gb  Files.o [1]
+FDT_Cluster             0x20003884     0x4  Data  Gb  Files.o [1]
+FDT_Start               0x20003880     0x4  Data  Gb  Files.o [1]
+FLASH_ErasePage         0x0800fb81    0x3c  Code  Gb  stm32f10x_flash.o [1]
+FLASH_GetStatus         0x0800fbef    0x24  Code  Gb  stm32f10x_flash.o [1]
+FLASH_IRQHandler        0x08010833     0x2  Code  Gb  stm32f10x_it.o [1]
+FLASH_Lock              0x0800fb73     0xe  Code  Gb  stm32f10x_flash.o [1]
+FLASH_ProgramHalfWord   0x0800fbbd    0x32  Code  Gb  stm32f10x_flash.o [1]
+FLASH_Unlock            0x0800fb61    0x12  Code  Gb  stm32f10x_flash.o [1]
+FLASH_WaitForLastOperation
+                        0x0800fc29    0x32  Code  Gb  stm32f10x_flash.o [1]
+F_Buff                  0x20003180   0x200  Data  Gb  Files.o [1]
+F_Unit                  0x08010b3c    0x10  Data  Gb  Menu.o [1]
+Field                   0x08010bbc    0x3c  Data  Gb  Menu.o [1]
+FileNum                 0x200018a4     0x4  Data  Gb  Menu.o [1]
+File_Addr               0x20003878     0x4  Data  Gb  Files.o [1]
+Fill_Rectangle          0x0800e627    0x48  Code  Gb  Lcd.o [1]
+Find_Trig               0x0800e8cf    0x8e  Code  Gb  Function.o [1]
+Fout_ARR                0x0801053c    0x40  Data  Gb  Menu.o [1]
+Fout_PSC                0x080104fc    0x40  Data  Gb  Menu.o [1]
+Frequency               0x20003848     0x4  Data  Gb  Function.o [1]
+GetScanPos              0x0800e8a3    0x2c  Code  Gb  Function.o [1]
+HardFaultException      0x0801081b     0x2  Code  Gb  stm32f10x_it.o [1]
+HidePopup               0x0800cbc5    0x44  Code  Gb  Menu.o [1]
+Hide_Index              0x20001958    0x1c  Data  Gb  Menu.o [1]
+I2C1_ER_IRQHandler      0x08010a29     0x2  Code  Gb  stm32f10x_it.o [1]
+I2C1_EV_IRQHandler      0x08010a27     0x2  Code  Gb  stm32f10x_it.o [1]
+I2C2_ER_IRQHandler      0x08010a2d     0x2  Code  Gb  stm32f10x_it.o [1]
+I2C2_EV_IRQHandler      0x08010a2b     0x2  Code  Gb  stm32f10x_it.o [1]
+Int32String             0x0800da9d   0x1c0  Code  Gb  Calculate.o [1]
+Int32String_sign        0x0800d871   0x1de  Code  Gb  Calculate.o [1]
+Item_F                  0x0801076c    0x70  Data  Gb  Menu.o [1]
+Item_Index              0x200018a8    0x38  Data  Gb  Menu.o [1]
+Item_T                  0x08010690    0xdc  Data  Gb  Menu.o [1]
+Item_V                  0x080105c8    0xc8  Data  Gb  Menu.o [1]
+Key_Buffer              0x200038bd     0x1  Data  Gb  HW_V1_Config.o [1]
+Km                      0x200018e0    0x28  Data  Gb  Menu.o [1]
+Ks                      0x08010c30    0x2c  Data  Gb  Function.o [1]
+LCD_SET_WINDOW          0x0800dce1    0x5a  Code  Gb  Lcd.o [1]
+LCD_WR_REG              0x0800dcc5    0x1c  Code  Gb  Lcd.o [1]
+LoadConfig              0x0800d4c1    0x66  Code  Gb  Menu.o [1]
+LoadWave                0x0800d29b    0x86  Code  Gb  Menu.o [1]
+MODE_Unit               0x080107fc    0x1c  Data  Gb  Menu.o [1]
+Mark_Trig               0x0800e855    0x4e  Code  Gb  Function.o [1]
+MeDC                    0x20003838     0x1  Data  Gb  Function.o [1]
+MeFr                    0x20003837     0x1  Data  Gb  Function.o [1]
+Measure_Wave            0x0800edc7   0x2f6  Code  Gb  Function.o [1]
+MemManageException      0x0801081d     0x2  Code  Gb  stm32f10x_it.o [1]
+Menu                    0x20001800    0x6c  Data  Gb  Menu.o [1]
+NMIException            0x08010819     0x2  Code  Gb  stm32f10x_it.o [1]
+NVIC_Configuration      0x0800d6f1    0x1e  Code  Gb  HW_V1_Config.o [1]
+NVIC_Init               0x0800f6b9    0x7e  Code  Gb  stm32f10x_nvic.o [1]
+NVIC_SetVectorTable     0x0800f737     0xc  Code  Gb  stm32f10x_nvic.o [1]
+Num                     0x200038a0    0x10  Data  Gb  Menu.o [1]
+Open_File               0x0800f311   0x112  Code  Gb  Files.o [1]
+PVD_IRQHandler          0x0801082d     0x2  Code  Gb  stm32f10x_it.o [1]
+PendSVC                 0x08010827     0x2  Code  Gb  stm32f10x_it.o [1]
+PercentString           0x0800da4f    0x4e  Code  Gb  Calculate.o [1]
+Point_SCR               0x0800dd3b    0x32  Code  Gb  Lcd.o [1]
+Popup                   0x20003890     0xc  Data  Gb  Menu.o [1]
+Process_Wave            0x0800e9cd    0xf0  Code  Gb  Function.o [1]
+PutConfig               0x0800d575    0x48  Code  Gb  Menu.o [1]
+RCC_IRQHandler          0x08010835     0x2  Code  Gb  stm32f10x_it.o [1]
+RTCAlarm_IRQHandler     0x08010a3b     0x2  Code  Gb  stm32f10x_it.o [1]
+RTC_IRQHandler          0x08010831     0x2  Code  Gb  stm32f10x_it.o [1]
+Read_File               0x0800f4eb    0x12  Code  Gb  Files.o [1]
+Read_Parameter          0x0800f51d    0x14  Code  Gb  Files.o [1]
+Redraw_Wave             0x0800eb6f    0x24  Code  Gb  Function.o [1]
+Ref_Buffer              0x20003380   0x130  Data  Gb  Function.o [1]
+RefreshMeasure          0x0800cda1   0x242  Code  Gb  Menu.o [1]
+Refresh_Counter         0x200038b2     0x2  Data  Gb  HW_V1_Config.o [1]
+Region$$Table$$Base     0x08010ce0           --   Gb  - Linker created -
+Region$$Table$$Limit    0x08010d04           --   Gb  - Linker created -
+RestoreConfig           0x0800d5c1    0x6a  Code  Gb  Menu.o [1]
+Root_Addr               0x20003874     0x4  Data  Gb  Files.o [1]
+Rounded_Rectangle       0x0800e66f   0x12a  Code  Gb  Lcd.o [1]
+SD_Card_ON              0x0800d819    0x10  Code  Gb  HW_V1_Config.o [1]
+SD_Msgs                 0x20001888    0x1c  Data  Gb  Menu.o [1]
+SPI1_IRQHandler         0x08010a2f     0x2  Code  Gb  stm32f10x_it.o [1]
+SPI2_IRQHandler         0x08010a31     0x2  Code  Gb  stm32f10x_it.o [1]
+SVCHandler              0x08010825     0x2  Code  Gb  stm32f10x_it.o [1]
+SaveConfig              0x0800d429    0x98  Code  Gb  Menu.o [1]
+SaveWave                0x0800d32d    0x84  Code  Gb  Menu.o [1]
+SaveWaveImage           0x0800d3bf    0x66  Code  Gb  Menu.o [1]
+ScanMode                0x20003834     0x1  Data  Gb  Function.o [1]
+ScanSegment             0x200038bc     0x1  Data  Gb  Function.o [1]
+Scan_ARR                0x08010c88    0x2c  Data  Gb  Menu.o [1]
+Scan_Buffer             0x20001980  0x1800  Data  Gb  Function.o [1]
+Scan_PSC                0x08010c5c    0x2c  Data  Gb  Menu.o [1]
+Scan_Wave               0x0800ec21   0x1a6  Code  Gb  Function.o [1]
+SecPerClus              0x2000386c     0x2  Data  Gb  Files.o [1]
+SectorSize              0x2000386a     0x2  Data  Gb  Files.o [1]
+SelectMenu              0x0800d12d    0xa2  Code  Gb  Menu.o [1]
+SelectSub               0x0800d009   0x11c  Code  Gb  Menu.o [1]
+SetClusterNext          0x0800f24f    0x90  Code  Gb  Files.o [1]
+Set_Base                0x0800d7a1    0x1e  Code  Gb  HW_V1_Config.o [1]
+Set_Range               0x0800d711    0x90  Code  Gb  HW_V1_Config.o [1]
+Set_Y_Pos               0x0800d7f7    0x22  Code  Gb  HW_V1_Config.o [1]
+ShowPopup               0x0800cc15   0x176  Code  Gb  Menu.o [1]
+SigToAdc                0x0800e993    0x3a  Code  Gb  Function.o [1]
+Signal_Buffer           0x200034b0   0x12c  Data  Gb  Function.o [1]
+Stop_Wave               0x0800ec07    0x1a  Code  Gb  Function.o [1]
+Sub                     0x08010a40    0xf0  Data  Gb  Menu.o [1]
+Sync                    0x20003835     0x1  Data  Gb  Function.o [1]
+SyncSegment             0x20003836     0x1  Data  Gb  Function.o [1]
+SysTickHandler          0x08010829     0x2  Code  Gb  stm32f10x_it.o [1]
+TAMPER_IRQHandler       0x0801082f     0x2  Code  Gb  stm32f10x_it.o [1]
+TIM1_BRK_IRQHandler     0x080108c3     0x2  Code  Gb  stm32f10x_it.o [1]
+TIM1_CC_IRQHandler      0x080108c9     0x2  Code  Gb  stm32f10x_it.o [1]
+TIM1_TRG_COM_IRQHandler
+                        0x080108c7     0x2  Code  Gb  stm32f10x_it.o [1]
+TIM1_UP_IRQHandler      0x080108c5     0x2  Code  Gb  stm32f10x_it.o [1]
+TIM2_IRQHandler         0x080108cb     0x2  Code  Gb  stm32f10x_it.o [1]
+TIM3_IRQHandler         0x080108cd   0x112  Code  Gb  stm32f10x_it.o [1]
+TIM4_IRQHandler         0x08010a25     0x2  Code  Gb  stm32f10x_it.o [1]
+T_Scale                 0x080104a4    0x58  Data  Gb  Menu.o [1]
+T_Unit                  0x080107dc     0xc  Data  Gb  Menu.o [1]
+Tp                      0x200038b0     0x2  Data  Gb  Menu.o [1]
+USART1_IRQHandler       0x08010a33     0x2  Code  Gb  stm32f10x_it.o [1]
+USART2_IRQHandler       0x08010a35     0x2  Code  Gb  stm32f10x_it.o [1]
+USART3_IRQHandler       0x08010a37     0x2  Code  Gb  stm32f10x_it.o [1]
+USBWakeUp_IRQHandler    0x08010a3d     0x2  Code  Gb  stm32f10x_it.o [1]
+USB_HP_CAN_TX_IRQHandler
+                        0x080108ad     0x8  Code  Gb  stm32f10x_it.o [1]
+USB_LP_CAN_RX0_IRQHandler
+                        0x080108b5     0x8  Code  Gb  stm32f10x_it.o [1]
+Update                  0x2000186c    0x1c  Data  Gb  Menu.o [1]
+Update_Item             0x0800c0ed   0xa2a  Code  Gb  Menu.o [1]
+UsageFaultException     0x08010821     0x2  Code  Gb  stm32f10x_it.o [1]
+V_Scale                 0x08010454    0x50  Data  Gb  Menu.o [1]
+V_Unit                  0x08010b30     0xc  Data  Gb  Menu.o [1]
+Vavg                    0x20003858     0x4  Data  Gb  Function.o [1]
+Vdc                     0x2000385c     0x4  Data  Gb  Function.o [1]
+View_Buffer             0x200035dc   0x12c  Data  Gb  Function.o [1]
+Vmax                    0x20003864     0x4  Data  Gb  Function.o [1]
+Vmin                    0x20003860     0x4  Data  Gb  Function.o [1]
+Vpp                     0x20003850     0x4  Data  Gb  Function.o [1]
+Vrms                    0x20003854     0x4  Data  Gb  Function.o [1]
+WWDG_IRQHandler         0x0801082b     0x2  Code  Gb  stm32f10x_it.o [1]
+Wait_CNT                0x2000383e     0x2  Data  Gb  Function.o [1]
+Writ_BMP_File           0x0800f423    0xc8  Code  Gb  Files.o [1]
+Write_File              0x0800f4fd    0x20  Code  Gb  Files.o [1]
+Write_Parameter         0x0800f531    0x3e  Code  Gb  Files.o [1]
+X1_Counter              0x2000383a     0x2  Data  Gb  Function.o [1]
+X2_Counter              0x2000383c     0x2  Data  Gb  Function.o [1]
+Y_POSm                  0x20001908    0x28  Data  Gb  Menu.o [1]
+Y_POSn                  0x20001930    0x28  Data  Gb  Menu.o [1]
+__Add_Color             0x0800f75d          Code  Gb  ASM_Function.o [1]
+__BASEPRICONFIG         0x08010ba7          Code  Gb  cortexm3_macro.o [1]
+__DMB                   0x08010b65          Code  Gb  cortexm3_macro.o [1]
+__DSB                   0x08010b5f          Code  Gb  cortexm3_macro.o [1]
+__Erase_Color           0x0800f8bb          Code  Gb  ASM_Function.o [1]
+__GetBASEPRI            0x08010bad          Code  Gb  cortexm3_macro.o [1]
+__Get_Pixel             0x0800fa71          Code  Gb  ASM_Function.o [1]
+__ISB                   0x08010b59          Code  Gb  cortexm3_macro.o [1]
+__MRS_CONTROL           0x08010b6f          Code  Gb  cortexm3_macro.o [1]
+__MRS_MSP               0x08010b8b          Code  Gb  cortexm3_macro.o [1]
+__MRS_PSP               0x08010b7f          Code  Gb  cortexm3_macro.o [1]
+__MSR_CONTROL           0x08010b75          Code  Gb  cortexm3_macro.o [1]
+__MSR_MSP               0x08010b91          Code  Gb  cortexm3_macro.o [1]
+__MSR_PSP               0x08010b85          Code  Gb  cortexm3_macro.o [1]
+__RESETFAULTMASK        0x08010ba3          Code  Gb  cortexm3_macro.o [1]
+__RESETPRIMASK          0x08010b9b          Code  Gb  cortexm3_macro.o [1]
+__REV_HalfWord          0x08010bb3          Code  Gb  cortexm3_macro.o [1]
+__REV_Word              0x08010bb7          Code  Gb  cortexm3_macro.o [1]
+__SETFAULTMASK          0x08010b9f          Code  Gb  cortexm3_macro.o [1]
+__SETPRIMASK            0x08010b97          Code  Gb  cortexm3_macro.o [1]
+__SEV                   0x08010b55          Code  Gb  cortexm3_macro.o [1]
+__SVC                   0x08010b6b          Code  Gb  cortexm3_macro.o [1]
+__WFE                   0x08010b51          Code  Gb  cortexm3_macro.o [1]
+__WFI                   0x08010b4d          Code  Gb  cortexm3_macro.o [1]
+__aeabi_memcpy          0x0800f589          Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy4         0x0800f5a3          Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8         0x0800f5a3          Code  Gb  ABImemcpy.o [4]
+__aeabi_memset          0x0800f5f9          Code  Gb  ABImemset.o [4]
+__aeabi_memset4         0x0800f681          Code  Gb  ABImemset48.o [4]
+__aeabi_memset8         0x0800f681          Code  Gb  ABImemset48.o [4]
+__cmain                 0x08010d05          Code  Gb  cmain.o [4]
+__exit                  0x08010d35    0x14  Code  Gb  exit.o [5]
+__iar_Memset            0x0800f5f9          Code  Gb  ABImemset.o [4]
+__iar_Memset4_word      0x0800f689          Code  Gb  ABImemset48.o [4]
+__iar_Memset8_word      0x0800f689          Code  Gb  ABImemset48.o [4]
+__iar_Memset_word       0x0800f601          Code  Gb  ABImemset.o [4]
+__iar_copy_init3        0x0800f13f    0x2e  Code  Gb  copy_init3.o [4]
+__iar_data_init3        0x08010cb5    0x2c  Code  Gb  data_init3.o [4]
+__iar_program_start     0x08010e49          Code  Gb  cstartup_M.o [4]
+__iar_zero_init3        0x0800f65f    0x22  Code  Gb  zero_init3.o [4]
+__low_level_init        0x08010d1b     0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x0800c000    0xec  Data  Gb  stm32f10x_vector.o [1]
+_call_main              0x08010d11          Code  Gb  cmain.o [4]
+_exit                   0x08010d29          Code  Gb  cexit.o [4]
+_main                   0x08010d17          Code  Gb  cmain.o [4]
+exit                    0x08010d1f     0x8  Code  Gb  exit.o [3]
+frm_col                 0x200038ba     0x2  Data  Gb  Lcd.o [1]
+main                    0x0800fc5d   0x7ec  Code  Gb  main.o [1]
+pLib                    0x200038b4     0x4  Data  Gb  HW_V1_Config.o [1]
+sqrt32                  0x0800dca9    0x1c  Code  Gb  Calculate.o [1]
+strlen                  0x0800f109          Code  Gb  strlen.o [4]
+t0                      0x20003840     0x2  Data  Gb  Function.o [1]
+t0_scan                 0x20003842     0x2  Data  Gb  Function.o [1]
+tp_to_abs               0x20003844     0x2  Data  Gb  Function.o [1]
+tp_to_rel               0x20003846     0x2  Data  Gb  Function.o [1]
+
+
+[1] = C:\DSO\DSO BenF v3\DS0201_APP\project\EWARM\FLASH\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  18 028 bytes of readonly  code memory
+   2 640 bytes of readonly  data memory
+  12 478 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
