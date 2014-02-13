@@ -3,3 +3,6 @@ The DSO Nano is a one-channel handheld oscilloscope, suitable for quick field me
 Being a new and dynamic open-hardware and open-source project, the information tends to be scattered around quite a bit. This page will try to collect the most relevant information in a single place, in order to help newcomers find their way through the wealth of unorganized material already available. 
 
 This firmware is compiled by IAR6.0
+
+
+[![Analytics](https://ga-beacon.appspot.com/UA-46589105-3/DSO)](https://github.com/igrigorik/ga-beacon)
