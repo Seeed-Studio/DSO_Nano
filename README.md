@@ -4,5 +4,14 @@ Being a new and dynamic open-hardware and open-source project, the information t
 
 This firmware is compiled by IAR6.0
 
+----
+This software is open-sourced for study and discussion purpose.
+
+The STMicroelectronics factory library (library directory and USBLib directory)'s copyrights are reserved by the STMicroelectronics. 
+
+The DS0201_APP and DS0201_LIB are developed by BenF and the copyrights are also reserved by the author BenF.
+
+
+
 
 [![Analytics](https://ga-beacon.appspot.com/UA-46589105-3/DSO)](https://github.com/igrigorik/ga-beacon)
