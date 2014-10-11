@@ -14,4 +14,4 @@ The DS0201_APP and DS0201_LIB are developed by BenF and the copyrights are also 
 
 
 
-[![Analytics](https://ga-beacon.appspot.com/UA-46589105-3/DSO)](https://github.com/igrigorik/ga-beacon)
+[![Analytics](https://ga-beacon.appspot.com/UA-46589105-3/DSO_Nano)](https://github.com/igrigorik/ga-beacon)
